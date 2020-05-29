@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap');
 
+main{
+    padding-top: 80px;
+}
+
 h1 {
     font-size: 10rem;
     color: cyan;
@@ -28,7 +32,7 @@ nav {
     width: 100%;
 }
 
-.menuarea li a{
+.nav-links li a{
     text-decoration: none;
     letter-spacing: 1px;
     display: block;
@@ -38,19 +42,28 @@ nav {
     color: lightgray;
 }
 
-.menuarea li a:hover{
+.nav-links li a:hover{
     background: darkgrey;
     color: white;
 }
 
 
 
-.menuarea li {
+.nav-links li {
     list-style: none;
     display: inline-block;
     justify-content: space-between;
 }
 
+/* do not show the mobile slider as default*/
+.navbar-toggle {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    cursor: pointer; 
+    color: lightgray;
+    font-size: 24px;
+}
 
 
 .name {
@@ -161,6 +174,12 @@ div .aboutme, .portfolio, .tech {
         margin-top: 50px;
         margin-bottom: 25px;
     }
+    .navbar-toggle{
+        top: 13px;
+    }
+    h2.navbar{
+        font-size: 1em;
+    }
     .mainscreen{
         height: 50vh;
         width: auto;
@@ -186,6 +205,24 @@ div .aboutme, .portfolio, .tech {
         letter-spacing: .025em;
         color: #7795f8;
     }
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: darkgrey;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 50%;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    
 }
 /* Small devices (600px and up)*/
 @media screen and (min-width: 600px) and (max-width: 767px){
@@ -196,15 +233,37 @@ div .aboutme, .portfolio, .tech {
     .content {
         position: absolute;
     }
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: darkgrey;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 50%;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    
 }
 /* Medium devices (768px and up)*/
 @media screen and (min-width: 768px) and (max-width: 991px){
-   
+    .navbar-toggle {
+        display: none;
+    }
 }
 
 /* Large devices (992px and up)*/
 @media screen and (min-width: 992px) and (max-width: 1199px){
-    
+    .navbar-toggle {
+        display: none;
+    }
 }
 
 /* Extra Large devices (1200px and up)*/
@@ -219,5 +278,26 @@ div .aboutme, .portfolio, .tech {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+    }
+    .navbar-toggle {
+        display: none;
+    }
+}
+
+/* brings the mobile menu in from the side where it is hidden off screen */
+.nav-active{
+    transform:translateX(0%);
+}
+
+
+/* the following slides in the links */
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
     }
 }
