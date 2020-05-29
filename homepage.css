@@ -152,7 +152,7 @@ div .aboutme, .portfolio, .tech {
     border-bottom: rgb(32, 32, 32) solid 1px;
 }
 
-div .project{
+/* div .project{
     display: inline-block;
     background-color: rebeccapurple;
     height: 325px;
@@ -162,7 +162,7 @@ div .project{
     color: #DBDFF4;
     border: 1px solid black;
     overflow: hidden;
-}
+} */
 
 div .techimg{
     display: inline-block;
