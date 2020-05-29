@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap');
 
+main{
+    padding-top: 80px;
+}
+
 h1 {
     font-size: 10rem;
     color: cyan;
@@ -13,10 +17,67 @@ h2 {
     background-size: contain;
 }
 
+nav {
+    font-size: 1.5rem;
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: black;
+    color: lightgray;
+    position: fixed;
+    height: 80px;
+    padding: 10px 20px 10px 10px;
+    text-align: right;
+    z-index: 10;
+    width: 100%;
+}
+
+.nav-links li a{
+    text-decoration: none;
+    letter-spacing: 1px;
+    display: block;
+    padding: 0 25px;
+    line-height: 30px;
+    position: relative;
+    color: lightgray;
+}
+
+.nav-links li a:hover{
+    background: darkgrey;
+    color: white;
+}
+
+
+
+.nav-links li {
+    list-style: none;
+    display: inline-block;
+    justify-content: space-between;
+}
+
+/* do not show the mobile slider as default*/
+.navbar-toggle {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    cursor: pointer; 
+    color: lightgray;
+    font-size: 24px;
+}
+
+
+.name {
+    float: left;
+    padding-left: 2%;
+    text-align: left;
+    padding: 0 25px;
+    line-height: 24px;
+}
+
 body {
     margin: 0;
     font-family: Montserrat;
-    background-color: lightgray;
+    background-color: rgb(129, 129, 129);
 }
 
 .mainscreen{
@@ -45,15 +106,20 @@ body {
     padding: 0.3em 0.5em;
     -webkit-box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
     box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-    background: #fff;
+    background: rgb(70, 64, 64);
     border:none;
     border-radius: 0.5em;
     font-size: 1.5em;
-    font-weight: 100;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: .025em;
-    color: #7795f8;
+    color: #bebfc0;
     outline: none;
+}
+
+.contact a{
+    color: #bebfc0;
+    text-decoration: none;
 }
 
 .github, .linkedin, .gmail{
@@ -104,11 +170,19 @@ div .aboutme, .portfolio, .tech {
 /* Extra Small devices (<600px)*/
 @media screen and (max-width: 599px){
     h1{
-        font-size: 4rem;
-        margin-bottom: 0;
+        font-size: 2.5rem;
+        margin-top: 50px;
+        margin-bottom: 25px;
+    }
+    .navbar-toggle{
+        top: 13px;
+    }
+    h2.navbar{
+        font-size: 1em;
     }
     .mainscreen{
         height: 50vh;
+        width: auto;
     }
     .intro{
         padding-bottom: 100px;
@@ -121,6 +195,34 @@ div .aboutme, .portfolio, .tech {
         left: 10%;
         right: 10%;
     }
+    .contact {
+        display: inline-flex;
+        justify-content: space-around;
+        line-height: 40px;
+        padding: 0.3em 0.5em;
+        font-size: 1em;
+        font-weight: 100;
+        letter-spacing: .025em;
+        color: #7795f8;
+    }
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: darkgrey;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 50%;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    
 }
 /* Small devices (600px and up)*/
 @media screen and (min-width: 600px) and (max-width: 767px){
@@ -130,18 +232,38 @@ div .aboutme, .portfolio, .tech {
     }
     .content {
         position: absolute;
-        left: 10%;
-        right: 10%;
     }
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: darkgrey;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 50%;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    
 }
 /* Medium devices (768px and up)*/
 @media screen and (min-width: 768px) and (max-width: 991px){
-   
+    .navbar-toggle {
+        display: none;
+    }
 }
 
 /* Large devices (992px and up)*/
 @media screen and (min-width: 992px) and (max-width: 1199px){
-    
+    .navbar-toggle {
+        display: none;
+    }
 }
 
 /* Extra Large devices (1200px and up)*/
@@ -156,5 +278,26 @@ div .aboutme, .portfolio, .tech {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+    }
+    .navbar-toggle {
+        display: none;
+    }
+}
+
+/* brings the mobile menu in from the side where it is hidden off screen */
+.nav-active{
+    transform:translateX(0%);
+}
+
+
+/* the following slides in the links */
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
     }
 }
