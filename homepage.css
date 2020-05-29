@@ -13,10 +13,58 @@ h2 {
     background-size: contain;
 }
 
+nav {
+    font-size: 1.5rem;
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: black;
+    color: lightgray;
+    position: fixed;
+    height: 80px;
+    padding: 10px 20px 10px 10px;
+    text-align: right;
+    z-index: 10;
+    width: 100%;
+}
+
+.menuarea li a{
+    text-decoration: none;
+    letter-spacing: 1px;
+    display: block;
+    padding: 0 25px;
+    line-height: 30px;
+    position: relative;
+    color: lightgray;
+}
+
+.menuarea li a:hover{
+    background: darkgrey;
+    color: white;
+}
+
+
+
+.menuarea li {
+    list-style: none;
+    display: inline-block;
+    justify-content: space-between;
+}
+
+
+
+.name {
+    float: left;
+    padding-left: 2%;
+    text-align: left;
+    padding: 0 25px;
+    line-height: 24px;
+}
+
 body {
     margin: 0;
     font-family: Montserrat;
-    background-color: lightgray;
+    background-color: rgb(129, 129, 129);
 }
 
 .mainscreen{
@@ -45,15 +93,20 @@ body {
     padding: 0.3em 0.5em;
     -webkit-box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
     box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-    background: #fff;
+    background: rgb(70, 64, 64);
     border:none;
     border-radius: 0.5em;
     font-size: 1.5em;
-    font-weight: 100;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: .025em;
-    color: #7795f8;
+    color: #bebfc0;
     outline: none;
+}
+
+.contact a{
+    color: #bebfc0;
+    text-decoration: none;
 }
 
 .github, .linkedin, .gmail{
@@ -104,11 +157,13 @@ div .aboutme, .portfolio, .tech {
 /* Extra Small devices (<600px)*/
 @media screen and (max-width: 599px){
     h1{
-        font-size: 4rem;
-        margin-bottom: 0;
+        font-size: 2.5rem;
+        margin-top: 50px;
+        margin-bottom: 25px;
     }
     .mainscreen{
         height: 50vh;
+        width: auto;
     }
     .intro{
         padding-bottom: 100px;
@@ -121,6 +176,16 @@ div .aboutme, .portfolio, .tech {
         left: 10%;
         right: 10%;
     }
+    .contact {
+        display: inline-flex;
+        justify-content: space-around;
+        line-height: 40px;
+        padding: 0.3em 0.5em;
+        font-size: 1em;
+        font-weight: 100;
+        letter-spacing: .025em;
+        color: #7795f8;
+    }
 }
 /* Small devices (600px and up)*/
 @media screen and (min-width: 600px) and (max-width: 767px){
@@ -130,8 +195,6 @@ div .aboutme, .portfolio, .tech {
     }
     .content {
         position: absolute;
-        left: 10%;
-        right: 10%;
     }
 }
 /* Medium devices (768px and up)*/
