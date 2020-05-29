@@ -161,6 +161,7 @@ div .project{
     line-height: 300px;
     color: #DBDFF4;
     border: 1px solid black;
+    overflow: hidden;
 }
 
 div .techimg{
