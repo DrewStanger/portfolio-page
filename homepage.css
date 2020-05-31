@@ -154,6 +154,7 @@ div .techimgs {
 }
 
 
+
 /* div .project{
     display: inline-block;
     background-color: rebeccapurple;
@@ -180,6 +181,12 @@ div .techimg{
 }
 .content p {
     line-height: 1.8em;
+    color: #DBDFF4;
+}
+
+.content li {
+    padding-top: 5px;
+    padding-bottom: 5px;
     color: #DBDFF4;
 }
 
